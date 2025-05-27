@@ -1,0 +1,121 @@
+<style is:inline>
+    .btn-showPass {
+        position: absolute;
+        top: 50%;
+        right: 0.7rem;
+        transform: translateY(-50%);
+    }
+</style>
+
+    <section class="container">
+        <div class="pt-4 slide-in-left">
+            <section class="card">
+                <div class="mx-3 py-3 rounded bg-app-green-500 text-center" style="margin-top: -2rem;">
+                    <h2 class="mb-0 text-white">Implantação Borelli</h2>
+                </div>
+
+                <div class="card-body">
+                    <h4>Redefinir Senha</h4>
+
+                    <div class="text-start">
+                        <p class="mb-0">Nome: Alex Macedo</p>
+                        <p>Email: alex.macedo@gelatoborelli.com</p>
+                    </div>
+
+                    <form data-js="form" method="POST" action="processos.asp">
+                        <div class="mb-2">
+                            <label class="position-relative">
+                                <input
+                                    type="password"
+                                    name="senha_atual"
+                                    class="form-control py-2"
+                                    placeholder="senha atual"
+                                    autocomplete="false"
+                                    required=""
+                                />
+
+                                <span
+                                    class="btn-showPass"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="mostrar/esconder senha"
+                                >
+                                    <i class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input
+                                    type="password"
+                                    name="senha_nova"
+                                    class="form-control py-2"
+                                    placeholder="nova senha"
+                                    autocomplete="false"
+                                    required=""
+                                    data-js="newPass"
+                                />
+
+                                <span
+                                    class="btn-showPass"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="mostrar/esconder senha"
+                                >
+                                    <i class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input
+                                    type="password"
+                                    name="senha_confirmacao"
+                                    class="form-control py-2"
+                                    placeholder="confirme a nova senha"
+                                    autocomplete="false"
+                                    required=""
+                                    data-js="newPassConfirm"
+                                />
+
+                                <span
+                                    class="btn-showPass"
+                                    data-bs-toggle="tooltip"
+                                    data-bs-title="mostrar/esconder senha"
+                                >
+                                    <i class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <small class="check-msg-new-confirm">Senhas diferentes!</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 mb-3" data-button="submit">Enviar</button>
+                        <input
+                            type="hidden"
+                            id="token"
+                            name="token"
+                            value="eca2b567-941a-4e9b-b3d2-2cecc8f80528"
+                        />
+                    </form>
+
+                    <div class="progress mb-2">
+                        <div
+                            data-progress="pass-strength"
+                            class="progress-bar"
+                            role="progressbar"
+                            aria-valuenow="40"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            style="width:0%"
+                        >
+                        </div>
+                    </div>
+
+                    <div id="message" class="text-start mb-3">
+                        <b>Requisitos de senha:</b>
+                        <p data-valid="lowerCase" class="mb-0 invalid">1 letra minúscula</p>
+                        <p data-valid="upperCase" class="mb-0 invalid">1 letra maiúscula</p>
+                        <p data-valid="number" class="mb-0 invalid">1 número</p>
+                        <p data-valid="length" class="mb-0 invalid">Mínimo de 8 caracteres</p>
+                    </div>
+                </div>
+            </section>
+        </div><!-- .container-form -->
+    </section><!-- .container -->

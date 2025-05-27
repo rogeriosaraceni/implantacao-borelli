@@ -1,0 +1,41 @@
+---
+import Head from '@includes/head.astro';
+
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <Head />
+	</head>
+
+	<body class="body-popup">
+        <div class="card">
+            <div class="card-body">
+                <div class="section-title">
+                    <span class="title">Justificativa de Cancelamento</span>
+                </div>
+
+                <form method="POST" id="frmCancelaConsultoria" action="">
+                    <input type="hidden" id="id" name="id" value="2" />
+                    <label>
+                        Justificativa:
+                        <textarea class="form-control" id="justificativa" name="justificativa" rows="3" required></textarea>
+                    </label>
+
+                    <hr>
+
+                    <div class="d-flex align-items-end justify-content-end">
+                        <button
+                            type="submit"
+                            data-btn="spinner"
+                            class="btn btn-primary">
+                            <span>Salvar</span>
+                            <span class="btn-spinner spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<div id="mudaUnidades" class="card" style="">
+    <div class="card-body">
+        <div class="section-title">
+            <span class="title">Defina as Unidades de Acesso</span>
+        </div>
+
+        <section class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header overflow-hidden">
+                    <button
+                        class="accordion-button p-2 collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-01"
+                        aria-expanded="false"
+                        aria-controls="panelsStayOpen-01"
+                    >
+                        Unidade 1
+                    </button>
+                </h2>
+
+                <div id="panelsStayOpen-01" class="accordion-collapse collapse">
+                    <div class="accordion-body border-top p-2">
+                        <div class="form-check">
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" class="mt-0 form-check-input parent-all" data-group="._01">
+                                <span><b>Marcar Todos</b></span>
+                            </label>
+
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" name="unidade" id="unidade" data-checkbox="unidade" value="9ae1f30a-76af-40c7-8cda-30beffa49d2c" class="mt-0 form-check-input _01">
+                                <span>01</span>
+                            </label>
+
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" name="unidade" id="unidade" data-checkbox="unidade" value="7fa33cad-a6a9-4266-b0df-2c4fff0c0af2" class="mt-0 form-check-input _01">
+                                <span>02</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline>
+    $(document).ready(function(){
+        $(".parent-all").each(function(index){
+            var group = $(this).data("group");
+            var parent = $(this);
+
+            var checkboxesQTD = document.querySelectorAll(group).length;
+            var selectedCount = document.querySelectorAll(group+':checked').length;
+
+            if(checkboxesQTD == selectedCount){
+              parent.prop('checked', true);
+            }
+            else{
+              parent.prop('checked', false);
+            }
+        });
+    });
+
+    $(".parent-all").each(function(index){
+        var group = $(this).data("group");
+        var parent = $(this);
+
+        parent.change(function(){  //"select all" change
+            $(group).prop('checked', parent.prop("checked"));
+        });
+
+        $(group).change(function(){
+            parent.prop('checked', false);
+
+            if ($(group+':checked').length == $(group).length ){
+                parent.prop('checked', true);
+            }
+        });
+    });
+</script>

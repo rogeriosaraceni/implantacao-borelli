@@ -1,0 +1,53 @@
+---
+import Head from '@includes/head.astro';
+import Form from './_content-form.astro';
+import FooterLogin from '../_parts/footerLogin.astro'
+
+import '../_assets/login.css'
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+    <Head />
+
+    <body class="body-login">
+        <main class="main-app z-1">
+            <div class="d-flex flex-column justify-content-center h-100">
+                <div class="container my-auto">
+                    <div class="container-form mx-auto slide-in-left">
+                        <section class="card bg-shadow-opacity blur mb-3 z-0">
+                            <div class="card-header mt-n4 mx-3 py-3 border-radius-lg bg-gradient-blue shadow-primary z-1 text-center">
+                                <img class="img-fluid puff-in-center" src="/assets/images/logo.png" alt="logo" style="max-width: 100px;"/>
+                            </div>
+
+                            <div class="card-body">
+                                <h4>Login</h4>
+
+                                <Form />
+                            </div>
+                        </section>
+                    </div><!-- .container-form -->
+                </div><!-- .container -->
+
+                <FooterLogin />
+            </div>
+        </main>
+    </body>
+</html>
+
+<script is:inline>
+    /*! --------------------------------------------------------------------
+    * mostra senha
+    * --------------------------------------------------------------------*/
+    let btnShowAllPassword = document.querySelectorAll(".btn-showPass");
+
+    btnShowAllPassword.forEach((item) => {
+        item.addEventListener("click", () => {
+            item.children[0].classList.toggle("bi-unlock");
+            const inputPass = item.parentNode.children[0];
+            const type =
+                inputPass.getAttribute("type") === "password" ? "text" : "password";
+            inputPass.setAttribute("type", type);
+        });
+    });
+</script>

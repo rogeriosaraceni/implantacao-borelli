@@ -1,0 +1,44 @@
+---
+interface Props {
+    col?: string;
+}
+
+const { col } = Astro.props;
+
+const valuesSelect = [
+
+    //A CONTRATAR
+    {
+        value: "1",
+        name: "Unidade 1",
+    },
+    {
+        value: "2",
+        name: "Unidade 2",
+    },
+    {
+        value: "3",
+        name: "Unidade 3",
+    },
+    {
+        value: "4",
+        name: "Unidade 4",
+    },
+    {
+        value: "5",
+        name: "Unidade 5",
+    },
+];
+---
+
+<label class={col}>Unidade:
+    <select name="redional" id="" class="form-select" required>
+        <option value=""></option>
+        {
+            valuesSelect.map(({ value, name }) => (
+                <option value={value}>{name}</option>
+            ))
+        }
+    </select>
+</label>
+

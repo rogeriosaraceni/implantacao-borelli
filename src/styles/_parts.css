@@ -1,0 +1,102 @@
+/* ////////////////////////////////////////////////////////////////////
+header-app
+nav-app
+footer-app
+
+//////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+header-app
+---------------------------------------------------------------------- */
+.header-app{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+
+    padding-top: 0!important;
+    padding-bottom: 0!important;
+}
+
+/* --------------------------------------------------------------------
+nav-app
+---------------------------------------------------------------------- */
+.nav-app {
+    width: 100%;
+    padding: 0.25rem 0;
+    background: rgb(52,73,58);
+}
+
+@media (min-width: 992px){
+    .nav-app .navbar-nav .nav-item:first-child .nav-link{
+        padding-left: 0;
+    }
+}
+
+.nav-app .nav-item .nav-link,
+.nav-app .nav-item>a,
+.nav-app .btn {
+    color: #fff;
+    font-size: 0.8rem;
+}
+.nav-app .nav-item .nav-link:hover,
+.nav-app .nav-item>a:hover,
+.nav-app .btn:hover {
+    color: #bccee4;
+}
+.nav-app .nav-item  .nav-link.active,
+.nav-app .nav-item.active>a {
+    color: #fff;
+}
+
+.nav-app .nav.nav-auxiliar{
+    margin: 0;
+}
+.nav-app .nav.nav-auxiliar .nav-item{
+    --bs-nav-link-padding-x: 0.5rem;
+}
+
+/* --------------------------------------------------------------------
+nav-modulos
+---------------------------------------------------------------------- */
+.nav-modulos {
+    background-color: #d9d6d6;
+}
+
+.navbar-toggler{
+    display: none;
+}
+
+    /* offcanvas-collapse (custom) */
+@media screen and (max-width: 1200px) {
+    .navbar-toggler{
+        display: block;
+    }
+    .offcanvas-collapse {
+        position: fixed;
+        /* Height of navbar */
+        top: 46px;
+        bottom: 0;
+        left: 100%;
+        width: 100%;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        overflow-y: auto;
+        visibility: hidden;
+        background-color: #d9d6d6;
+        transition: transform .3s ease-in-out, visibility .3s ease-in-out;
+    }
+
+    .offcanvas-collapse.open {
+        visibility: visible;
+        transform: translateX(-100%);
+    }
+}
+
+/* --------------------------------------------------------------------
+footer
+---------------------------------------------------------------------- */
+.footer-app{
+    background-color: #fff;
+}

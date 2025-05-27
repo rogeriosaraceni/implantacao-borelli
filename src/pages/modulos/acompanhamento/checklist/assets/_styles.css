@@ -1,0 +1,27 @@
+.wrapper-icons-checklist{
+    display: flex;
+    justify-content: center;
+}
+.content-icons-checklist{
+    display: flex;
+    width: 60px;
+}
+.btn-checklist{
+    position: relative;
+    color: #b4b8bb;
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 0 0.25rem;
+    overflow: hidden;
+    font-size: 1.35rem !important;
+}
+.btn-checklist .icon-anexo{
+    font-size: 1.65rem !important;
+}
+.btn-checklist .checkbox-yesNo{
+    z-index: -1;
+    position: absolute;
+}
+.btn-checklist [data-icon="check"].active{
+    color: var(--color-app-green-400);
+}

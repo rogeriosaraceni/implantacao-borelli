@@ -1,0 +1,75 @@
+<div class="card">
+    <div class="card-body">
+        <div class="section-title">
+            <span class="title">Dados de Acesso</span>
+        </div>
+
+        <section class="row">
+            <label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Nome:
+                <input type="text" name="nome" class="form-control" value="" required="">
+            </label>
+
+            <label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Email:
+                <input type="email" name="email" id="email" class="form-control" value="" required="">
+            </label>
+
+            <label class="col-xl-3 col-lg-8 col-md-8 col-sm-6">Tipo:
+                <select name="perfilTipo" id="perfilTipo" class="form-select" required="">
+                    <option value=""></option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Gerente</option>
+                    <option value="3">Consultor</option>
+                    <option value="4">Franqueado</option>
+                </select>
+
+                <input type="hidden" name="id" value="0">
+                <input type="hidden" name="perfilTipoHidden" id="perfilTipoHidden">
+            </label>
+
+            <label class="col-xl-3 col-lg-8 col-md-8 col-sm-6" for="gerente">Gerente:
+                <select name="gerente" id="gerente" class="form-control" required="required">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </label>
+        </section>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script is:inline>
+    $(document).ready(function(e) {
+        $("#perfilTipo").change(function(e) {
+            if(this.value == '1') {
+                $("#mudaUnidades").hide('fast');
+            } else {
+                $("#mudaUnidades").show('fast');
+            }
+        });
+    });
+
+    var perfilTipoSelect = $('#perfilTipo');
+    var perfilLabel   = document.querySelector('label[for="gerente"]');
+    var perfilSelect = $('#gerente');
+
+    function toggleTipoLabel(isVisible) {
+        perfilLabel.classList.toggle("d-none", !isVisible)
+
+        if (isVisible) {
+            perfilSelect.selectpicker('show');
+            perfilSelect.selectpicker();
+            perfilSelect.attr("required", true);
+        } else {
+            perfilSelect.selectpicker('hide');
+            perfilSelect.attr("required", false);
+        }
+    }
+
+    toggleTipoLabel(perfilTipoSelect.val() === '3' || perfilTipoSelect.val() === '4');
+
+    perfilTipoSelect.on('change', (event) => {
+        toggleTipoLabel(event.target.value === '3' || perfilTipoSelect.val() === '4');
+    });
+</script>
+
+
+

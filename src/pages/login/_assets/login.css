@@ -1,0 +1,89 @@
+/* ////////////////////////////////////////////////////////////////////
+*
+*  CSS APP login
+*
+* - body-login
+*
+* //////////////////////////////////////////////////////////////////// */
+
+/* --------------------------------------------------------------------
+* - body-login
+---------------------------------------------------------------------- */
+body.body-login {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url(./bgLogin.jpg);
+}
+body.body-login::after {
+	content: '';
+    position: fixed;
+	z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+	opacity: 0.4;
+	background-image: linear-gradient(195deg,#747b8a,#495361);
+}
+
+.body-login .bg-gradient-blue {
+	background: #fff !important;
+}
+
+.body-login .container-form{
+    max-width: 400px;
+}
+
+.body-login .card-header:first-child {
+	border-radius: 0.75rem;
+}
+
+.body-login .footer-app {
+	padding-top: 0;
+	padding-bottom: 0;
+	color: #fff;
+	border-top: none;
+	background-color: transparent;
+}
+
+.body-login .form-control {
+    background-color: #fff;
+}
+
+.btn-showPass {
+    position: absolute;
+    top: 50%;
+    right: 0.7rem;
+    transform: translateY(-50%);
+}
+
+.btn-submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff!important;
+    border-color: transparent;
+    background-color: var(--color-purple-400);
+    backdrop-filter: blur(30px);
+}
+.btn-submit:hover,
+.btn-submit:focus {
+    box-shadow: none;
+    color: #fff!important;
+    background-color: var(--color-orange-400);
+    border-color: transparent!important;
+}
+
+
+.mt-n4 {
+    margin-top: -2.5rem !important;
+}
+
+.blur {
+    backdrop-filter: blur(30px);
+}
+.bg-shadow-opacity {
+    box-shadow: inset 0 0 2px #fefefed1;
+    background-color: hsla(0, 0%, 100%, .4) !important;
+}

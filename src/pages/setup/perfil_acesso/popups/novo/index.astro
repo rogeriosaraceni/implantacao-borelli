@@ -1,0 +1,27 @@
+---
+import Head from '@includes/head.astro';
+import ContentDadosAcesso from './_content-dados-acesso.astro';
+import ContentUnidadesAcesso from './_content-unidades-acesso.astro';
+---
+
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <Head />
+	</head>
+
+	<body class="body-popup">
+        <form method="POST" id="formNewUser" action="">
+            <ContentDadosAcesso />
+            <ContentUnidadesAcesso />
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary btn-last-lg">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+	</body>
+</html>

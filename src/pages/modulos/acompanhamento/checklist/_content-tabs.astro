@@ -1,0 +1,106 @@
+<style is:inline>
+    /* --------------------------------------------------------------------
+    wrapper-sticky-tabs
+    ---------------------------------------------------------------------- */
+    .wrapper-sticky-tabs{
+        position: sticky;
+        top: 75px;
+        z-index: 100;
+    }
+    .wrapper-sticky-tabs .card{
+        background-color: #d0dae4;
+    }
+
+    @media(max-width: 991px){
+        .wrapper-sticky-tabs{
+            position: relative;
+            top: auto;
+        }
+    }
+
+    /* --------------------------------------------------------------------
+    nav-pills-app
+    ---------------------------------------------------------------------- */
+    .nav-pills-app .nav-item{
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-pills-app .nav-link{
+        padding: 0.25rem 0.5rem;
+        width: 100%;
+        color: #000;
+        border: 1px solid var(--bs-border-color);
+        background-color: #f8f8f8;
+        transition: all 0.3s;
+        font-size: 0.85rem;
+    }
+    .nav-pills-app .nav-link:hover{
+        color: #000;
+        background-color: #efefef;
+    }
+
+    .nav-pills.nav-pills-app .nav-link.active,
+    .nav-pills.nav-pills-app .show>.nav-link,
+    .nav-pills.nav-pills-app .nav-link.active:hover,
+    .nav-pills.nav-pills-app .show>.nav-link:hover {
+        color: #fff;
+        background-color: var(--color-app-green-500)!important;
+    }
+</style>
+
+<section class="wrapper-sticky-tabs">
+    <div class="card">
+        <div class="card-body">
+            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/itens_iniciais/" class="nav-link">Itens Iniciais</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/projeto/" class="nav-link">Projeto</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/definicao_datas/" class="nav-link">Definição de Datas</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/enxoval/" class="nav-link">Enxoval</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/obra/" class="nav-link">Obra</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/documentacao/" class="nav-link">Documentação</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/insumos/" class="nav-link">Insumos</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/rh/" class="nav-link">RH</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/checagens_finais" class="nav-link">Checagens Finais</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/moki_implantacao/" class="nav-link">Moki Implantação</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/etapas_treinamento/" class="nav-link">Etapas do Treinamento</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/moki_final/" class="nav-link">Moki Final</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    function navLinkTabsActive() {
+        const currentUrl = window.location.pathname
+        const navLinks = $(`#pills-tab a[href="${currentUrl}"]`)
+
+        if (navLinks) {
+            navLinks.addClass('active')
+        }
+    }
+    navLinkTabsActive()
+</script>

@@ -1,0 +1,107 @@
+<div class="card">
+    <div class="card-body">
+        <div class="section-title align-items-end justify-content-between flex-wrap gap-2">
+            <span class="title">Definição de Datas</span>
+            <div class="d-flex gap-1">
+                <i class="bi bi-clock"></i>
+                Ultima atualização: <span>Alex Macedo</span> - <span>07/12/24 15:40</span>
+            </div>
+        </div>
+
+        <form action="">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover text-center table-fixed">
+                    <thead>
+                        <tr>
+                            <th style="width: 400px;">Itens</th>
+                            <th style="width: 100px;">Franqueado</th>
+                            <th style="width: 100px;">Consultor</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-start">O cronograma de obras foi enviado?</td>
+                            <td>
+                                <div class="wrapper-icons-checklist">
+                                    <div class="content-icons-checklist">
+                                        <label class="btn-checklist">
+                                            <input class="checkbox-yesNo" type="checkbox" name="item" data-checkbox="yesNo" value="">
+                                            <i class="fa-solid fa-thumbs-up" data-icon="check" data-bs-toggle="tooltip" data-bs-title="Positivar"></i>
+                                        </label>
+
+                                        <a
+                                            class="btn-checklist"
+                                            data-bs-toggle="tooltip"
+                                            data-bs-title="Anexos"
+                                            data-fancybox=""
+                                            data-type="iframe"
+                                            data-width="900"
+                                            data-height="700"
+                                            href="./popups/anexos/"
+                                        >
+                                            <input class="checkbox-yesNo" type="checkbox" name="anexo" data-checkbox="" value="">
+                                            <i class="bi bi-paperclip icon-anexo"></i>
+                                        </a>
+                                </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="wrapper-icons-checklist">
+                                    <div class="content-icons-checklist">
+                                        <label class="btn-checklist">
+                                            <input class="checkbox-yesNo" type="checkbox" name="item" data-checkbox="yesNo" value="">
+                                            <i class="fa-solid fa-thumbs-up" data-icon="check" data-bs-toggle="tooltip" data-bs-title="Positivar"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-start">Data Prometida</td>
+                            <td></td>
+                            <td>
+                                <label class="mb-0">
+                                    <input type="date" class="form-control text-center" name="">
+                                </label>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="text-start">Cálculo da data de implantação e treinamento e inauguração</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script is:inline>
+    $(document).ready(function() {
+        function statusCheckIcon(checkbox) {
+            const icon = $(checkbox).siblings('[data-icon="check"]')
+            if (icon.length) {
+                const tooltipText = $(checkbox).is(':checked') ? 'Remover Positivar' : 'Positivar'
+                icon.attr('data-bs-title', tooltipText)
+                icon.toggleClass('active', $(checkbox).is(':checked'))
+                // Recria o tooltip do Bootstrap para aplicar as mudanças
+                const tooltip = bootstrap.Tooltip.getInstance(icon[0])
+                if (tooltip) {
+                    tooltip.setContent({ '.tooltip-inner': tooltipText })
+                } else {
+                    new bootstrap.Tooltip(icon[0])
+                }
+            }
+        }
+        $('[data-checkbox="yesNo"]').each(function() {
+            statusCheckIcon(this)
+        })
+        $('[data-checkbox="yesNo"]').on('change', function() {
+            statusCheckIcon(this)
+        })
+    })
+</script>
