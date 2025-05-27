@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- noindex -->
+<meta name="robots" content="noindex">
+<meta name="robots" content="nofollow">
+
+<title>Implantação Borelli</title>
+
+<!-- Favicons -->
+<link rel="icon" sizes="32x32" type="image/png" href="/assets/favicons/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png?v=1.0" sizes="180x180">
+<link rel="manifest" href="/assets/favicons/manifest.json?v=1.0">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="/assets/icons/bootstrap/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<!-- Bootstrap Css -->
+<link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/assets/vendor/animista.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap-select/bootstrap-select.min.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap-select/bootstrap-select-custom.css">
+<link rel="stylesheet" href="/assets/vendor/dataTables/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="/assets/vendor/fancybox/fancybox.css">
+
+<!-- App CSS -->
+<!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+
+<!-- Libs Js -->
+<script src="/assets/libs/jquery.min.js"></script>
+
+<!-- Bootstrap Js -->
+<script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="/assets/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="/assets/vendor/bootstrap-select/i18n/defaults-pt_BR.min.js"></script>
+<script src="/assets/vendor/dataTables/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
+<script src="/assets/vendor/fancybox/fancybox.umd.js"></script>
+<script src="/assets/vendor/jquery.floatThead.min.js"></script>
+<script src="/assets/vendor/purify.min.js"></script>
+
+<!-- App JS -->
+<script defer src="/assets/js/main.js"></script>
+	<link rel="stylesheet" href="/_astro/index.D0M4PUiO.css"></head>
+
+	<body class="body-popup">
+        <form method="POST" id="formNewUser" action="">
+            <div class="card">
+    <div class="card-body">
+        <div class="section-title">
+            <span class="title">Dados de Acesso</span>
+        </div>
+
+        <section class="row">
+            <label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Nome:
+                <input type="text" name="nome" class="form-control" value="" required="">
+            </label>
+
+            <label class="col-xl-3 col-lg-4 col-md-6 col-sm-6">Email:
+                <input type="email" name="email" id="email" class="form-control" value="" required="">
+            </label>
+
+            <label class="col-xl-3 col-lg-8 col-md-8 col-sm-6">Tipo:
+                <select name="perfilTipo" id="perfilTipo" class="form-select" required="">
+                    <option value=""></option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Gerente</option>
+                    <option value="3">Consultor</option>
+                    <option value="4">Franqueado</option>
+                </select>
+
+                <input type="hidden" name="id" value="0">
+                <input type="hidden" name="perfilTipoHidden" id="perfilTipoHidden">
+            </label>
+
+            <label class="col-xl-3 col-lg-8 col-md-8 col-sm-6" for="gerente">Gerente:
+                <select name="gerente" id="gerente" class="form-control" required="required">
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </label>
+        </section>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script>
+    $(document).ready(function(e) {
+        $("#perfilTipo").change(function(e) {
+            if(this.value == '1') {
+                $("#mudaUnidades").hide('fast');
+            } else {
+                $("#mudaUnidades").show('fast');
+            }
+        });
+    });
+
+    var perfilTipoSelect = $('#perfilTipo');
+    var perfilLabel   = document.querySelector('label[for="gerente"]');
+    var perfilSelect = $('#gerente');
+
+    function toggleTipoLabel(isVisible) {
+        perfilLabel.classList.toggle("d-none", !isVisible)
+
+        if (isVisible) {
+            perfilSelect.selectpicker('show');
+            perfilSelect.selectpicker();
+            perfilSelect.attr("required", true);
+        } else {
+            perfilSelect.selectpicker('hide');
+            perfilSelect.attr("required", false);
+        }
+    }
+
+    toggleTipoLabel(perfilTipoSelect.val() === '3' || perfilTipoSelect.val() === '4');
+
+    perfilTipoSelect.on('change', (event) => {
+        toggleTipoLabel(event.target.value === '3' || perfilTipoSelect.val() === '4');
+    });
+</script>
+            <div id="mudaUnidades" class="card" style="">
+    <div class="card-body">
+        <div class="section-title">
+            <span class="title">Defina as Unidades de Acesso</span>
+        </div>
+
+        <section class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header overflow-hidden">
+                    <button class="accordion-button p-2 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-01" aria-expanded="false" aria-controls="panelsStayOpen-01">
+                        Unidade 1
+                    </button>
+                </h2>
+
+                <div id="panelsStayOpen-01" class="accordion-collapse collapse">
+                    <div class="accordion-body border-top p-2">
+                        <div class="form-check">
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" class="mt-0 form-check-input parent-all" data-group="._01">
+                                <span><b>Marcar Todos</b></span>
+                            </label>
+
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" name="unidade" id="unidade" data-checkbox="unidade" value="9ae1f30a-76af-40c7-8cda-30beffa49d2c" class="mt-0 form-check-input _01">
+                                <span>01</span>
+                            </label>
+
+                            <label class="form-check-label gap-1">
+                                <input type="checkbox" name="unidade" id="unidade" data-checkbox="unidade" value="7fa33cad-a6a9-4266-b0df-2c4fff0c0af2" class="mt-0 form-check-input _01">
+                                <span>02</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!-- card body -->
+</div><!-- card -->
+
+<script>
+    $(document).ready(function(){
+        $(".parent-all").each(function(index){
+            var group = $(this).data("group");
+            var parent = $(this);
+
+            var checkboxesQTD = document.querySelectorAll(group).length;
+            var selectedCount = document.querySelectorAll(group+':checked').length;
+
+            if(checkboxesQTD == selectedCount){
+              parent.prop('checked', true);
+            }
+            else{
+              parent.prop('checked', false);
+            }
+        });
+    });
+
+    $(".parent-all").each(function(index){
+        var group = $(this).data("group");
+        var parent = $(this);
+
+        parent.change(function(){  //"select all" change
+            $(group).prop('checked', parent.prop("checked"));
+        });
+
+        $(group).change(function(){
+            parent.prop('checked', false);
+
+            if ($(group+':checked').length == $(group).length ){
+                parent.prop('checked', true);
+            }
+        });
+    });
+</script>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary btn-last-lg">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+	</body></html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- noindex -->
+<meta name="robots" content="noindex">
+<meta name="robots" content="nofollow">
+
+<title>Implantação Borelli</title>
+
+<!-- Favicons -->
+<link rel="icon" sizes="32x32" type="image/png" href="/assets/favicons/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png?v=1.0" sizes="180x180">
+<link rel="manifest" href="/assets/favicons/manifest.json?v=1.0">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="/assets/icons/bootstrap/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+<!-- Bootstrap Css -->
+<link rel="stylesheet" href="/assets/bootstrap/bootstrap.min.css">
+
+<!-- Vendor CSS -->
+<link rel="stylesheet" href="/assets/vendor/animista.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap-select/bootstrap-select.min.css">
+<link rel="stylesheet" href="/assets/vendor/bootstrap-select/bootstrap-select-custom.css">
+<link rel="stylesheet" href="/assets/vendor/dataTables/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="/assets/vendor/fancybox/fancybox.css">
+
+<!-- App CSS -->
+<!-- <link rel="stylesheet" href="/assets/css/styles.css"> -->
+
+<!-- Libs Js -->
+<script src="/assets/libs/jquery.min.js"></script>
+
+<!-- Bootstrap Js -->
+<script src="/assets/bootstrap/bootstrap.bundle.min.js"></script>
+
+<!-- Vendor JS -->
+<script src="/assets/vendor/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="/assets/vendor/bootstrap-select/i18n/defaults-pt_BR.min.js"></script>
+<script src="/assets/vendor/dataTables/jquery.dataTables.min.js"></script>
+<script src="/assets/vendor/dataTables/dataTables.bootstrap5.min.js"></script>
+<script src="/assets/vendor/fancybox/fancybox.umd.js"></script>
+<script src="/assets/vendor/jquery.floatThead.min.js"></script>
+<script src="/assets/vendor/purify.min.js"></script>
+
+<!-- App JS -->
+<script defer src="/assets/js/main.js"></script>
+	<link rel="stylesheet" href="/_astro/index.D0M4PUiO.css">
+<style>.btnScrollToTop[data-astro-cid-5ddr4pie]{position:fixed;right:1rem;bottom:2rem;font-size:1rem;cursor:pointer;transform:scale(1.8);opacity:0;transition:.3s}
+</style></head>
+
+	<body>
+		
+    <div class="nav-app">
+    <div class="container-fluid">
+        <section class="d-flex justify-content-between">
+            <div class="d-flex gap-2">
+    <button id="navbarSideCollapse" class="navbar-toggler p-0 border-0" type="button" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="/principal/">
+        <div class="d-flex align-items-center">
+            <img width="100%" height="40px" class="logo-svg" src="/assets/images/logo.png">
+        </div>
+    </a>
+</div>
+
+            <div class="d-flex align-items-center gap-1">
+                <ul class="nav nav-auxiliar">
+    <li class="nav-item">
+        <a class="nav-link py-0" data-fancybox data-type="iframe" data-width="1400" data-height="100%" href="/modulos/abertura_digitacao/">
+            <div class="d-flex flex-column text-center">
+                <i class="bi bi-calendar4-week fs-6"></i>
+                <span class="lh-1">A. Digitação</span>
+            </div>
+        </a>
+    </li>
+</ul>
+                <ul class="nav align-items-center">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle d-flex align-items-center py-0 pe-0 dropdown-toggle-animation" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-person-circle fs-3"></i>
+                <div class="d-flex flex-column ms-1">
+                    <span class="lh-1">Administrador</span>
+                    <small class="lh-1">Alex Macedo</small>
+                    <small class="lh-1">alex.macedo@gelatoborelli.com</small>
+                </div>
+            </div>
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-animation dropdown-menu-end p-0 overflow-hidden border-0 shadow">
+            <li>
+                <a class="dropdown-item" href="/setup/perfil_acesso/">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-person-circle fs-6"></i>
+                        <small class="line-height-1 ms-1">Perfil de Acesso</small>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" data-fancybox data-type="iframe" data-width="700" data-height="800" href="/setup/alterar_senha/">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-arrow-counterclockwise fs-6"></i>
+                        <small class="line-height-1 ms-1">Alterar Senha</small>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="/login/entry/">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-power fs-6"></i>
+                        <small class="line-height-1 ms-1">Sair</small>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+            </div>
+        </section>
+    </div>
+</div>
+
+    <main data-el="main-app" class="main-app">
+        <section class="container-fluid">
+            <nav aria-label="breadcrumb" class="breadcrumb-app">
+                <div class="d-flex align-items-center justify-content-between gap-1">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="/principal/" data-bs-toggle="tooltip" data-bs-title="Principal">
+                                <i class="bi bi-house-fill"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item">Acompanhamento</li>
+                        <li class="breadcrumb-item">
+                            <a href="/modulos/acompanhamento/status/">Status</a>
+                        </li>
+                        <li class="breadcrumb-item">Checklist</li>
+                        <li class="breadcrumb-item active" aria-current="page">Moki Implantação</li>
+                    </ol>
+
+                    <a class="btn btn-small btn-secondary" href="/principal/">
+    <i class="bi bi-arrow-left-short"></i> Principal
+</a>
+                </div>
+            </nav>
+        </section>
+
+        <section class="container-fluid">
+            <div class="card">
+    <div class="card-body p-2">
+        <div class="d-flex align-items-center gap-2">
+            <div class="flex-grow-1">
+                <div class="d-flex gap-2">
+                    <span class="badge text-bg-secondary fw-normal">Unidade: Caraguatatuba</span>
+                    <span class="badge text-bg-secondary fw-normal">Consultor: Ana Claudia</span>
+                    <span class="badge text-bg-secondary fw-normal">Tipo: Shopping</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <style>
+    /* --------------------------------------------------------------------
+    wrapper-sticky-tabs
+    ---------------------------------------------------------------------- */
+    .wrapper-sticky-tabs{
+        position: sticky;
+        top: 75px;
+        z-index: 100;
+    }
+    .wrapper-sticky-tabs .card{
+        background-color: #d0dae4;
+    }
+
+    @media(max-width: 991px){
+        .wrapper-sticky-tabs{
+            position: relative;
+            top: auto;
+        }
+    }
+
+    /* --------------------------------------------------------------------
+    nav-pills-app
+    ---------------------------------------------------------------------- */
+    .nav-pills-app .nav-item{
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-pills-app .nav-link{
+        padding: 0.25rem 0.5rem;
+        width: 100%;
+        color: #000;
+        border: 1px solid var(--bs-border-color);
+        background-color: #f8f8f8;
+        transition: all 0.3s;
+        font-size: 0.85rem;
+    }
+    .nav-pills-app .nav-link:hover{
+        color: #000;
+        background-color: #efefef;
+    }
+
+    .nav-pills.nav-pills-app .nav-link.active,
+    .nav-pills.nav-pills-app .show>.nav-link,
+    .nav-pills.nav-pills-app .nav-link.active:hover,
+    .nav-pills.nav-pills-app .show>.nav-link:hover {
+        color: #fff;
+        background-color: var(--color-app-green-500)!important;
+    }
+</style>
+
+<section class="wrapper-sticky-tabs">
+    <div class="card">
+        <div class="card-body">
+            <ul class="row nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/itens_iniciais/" class="nav-link">Itens Iniciais</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/projeto/" class="nav-link">Projeto</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/definicao_datas/" class="nav-link">Definição de Datas</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/enxoval/" class="nav-link">Enxoval</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/obra/" class="nav-link">Obra</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/documentacao/" class="nav-link">Documentação</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/insumos/" class="nav-link">Insumos</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/rh/" class="nav-link">RH</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/checagens_finais" class="nav-link">Checagens Finais</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/moki_implantacao/" class="nav-link">Moki Implantação</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/etapas_treinamento/" class="nav-link">Etapas do Treinamento</a>
+                </li>
+                <li class="nav-item col-lg-3 col-md-4 col-sm-6">
+                    <a href="/modulos/acompanhamento/checklist/tabs/moki_final/" class="nav-link">Moki Final</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<script>
+    function navLinkTabsActive() {
+        const currentUrl = window.location.pathname
+        const navLinks = $(`#pills-tab a[href="${currentUrl}"]`)
+
+        if (navLinks) {
+            navLinks.addClass('active')
+        }
+    }
+    navLinkTabsActive()
+</script>
+
+            <div class="card">
+    <div class="card-body">
+        <div class="section-title align-items-end justify-content-between flex-wrap gap-2">
+            <span class="title">Moki Implantação</span>
+            <div class="d-flex gap-1">
+                <i class="bi bi-clock"></i>
+                Ultima atualização: <span>Alex Macedo</span> - <span>07/12/24 15:40</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+        </section>
+    </main>
+
+		<footer class="footer-app p-2">
+    <div class="container-fluid">
+        <div class="small text-center">
+            Implantação Borelli © 2025 | All rights reserved.
+        </div>
+    </div>
+</footer>
+        
+
+<span class="btnScrollToTop" data-scroll="top" data-astro-cid-5ddr4pie>
+    <i class="bi bi-arrow-up-circle" data-astro-cid-5ddr4pie></i>
+</span>
+
+<script>
+    addEventListener("DOMContentLoaded", function () {
+        const btnScrollToTop = document.querySelector('[data-scroll="top"]')
+
+        window.onscroll = () => {
+            window.scrollY > 10 ? (btnScrollToTop.style.opacity = 1) : (btnScrollToTop.style.opacity = 0)
+        }
+        btnScrollToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" })
+    })
+</script>
+	</body></html>
