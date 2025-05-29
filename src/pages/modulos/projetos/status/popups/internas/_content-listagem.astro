@@ -1,0 +1,60 @@
+<div class="card">
+    <div class="card-body">
+        <div class="section-title">
+            <span class="title">Histórico Mensagens</span>
+        </div>
+
+         <table class="table table-bordered table-fixed table-hover tab-datatable-msn" width="100%">
+            <thead>
+                <tr>
+                    <th style="width: 150px">Data</th>
+                    <th style="width: 200px">Usuário</th>
+                    <th style="width: 300px">Mensagem</th>
+					
+                    <th style="width: 070px" class="text-center no-sort">Del</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td class="text-center">
+                        <a class="text-secondary fs-5" data-bs-toggle="tooltip" data-bs-title="Del" data-row="delete" href="#">
+                            <i class="bi bi-trash fs-5 icon-tab"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script is:inline>
+    $(".tab-datatable-msn").DataTable({
+        order: [[0, "asc"]],
+        ordering: true,
+        paging: true,
+        info: true,
+        scrollX: true,
+        scrollCollapse: true,
+
+        lengthMenu: [
+            [10, 20, 30, 40, -1],
+            [10, 20, 30, 40, "Tudo"],
+        ],
+
+        columnDefs: [
+            {
+                targets: "no-sort",
+                orderable: false,
+            },
+        ],
+
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/1.13.4/i18n/pt-BR.json",
+        },
+    });
+</script>
