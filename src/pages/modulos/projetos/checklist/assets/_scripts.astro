@@ -1,0 +1,25 @@
+<script is:inline>
+    $(document).ready(function() {
+        function statusCheckIcon(checkbox) {
+            const icon = $(checkbox).siblings('[data-icon="check"]')
+            if (icon.length) {
+                const tooltipText = $(checkbox).is(':checked') ? 'Remover Positivar' : 'Positivar'
+                icon.attr('data-bs-title', tooltipText)
+                icon.toggleClass('active', $(checkbox).is(':checked'))
+                // Recria o tooltip do Bootstrap para aplicar as mudanças
+                const tooltip = bootstrap.Tooltip.getInstance(icon[0])
+                if (tooltip) {
+                    tooltip.setContent({ '.tooltip-inner': tooltipText })
+                } else {
+                    new bootstrap.Tooltip(icon[0])
+                }
+            }
+        }
+        $('[data-checkbox="yesNo"]').each(function() {
+            statusCheckIcon(this)
+        })
+        $('[data-checkbox="yesNo"]').on('change', function() {
+            statusCheckIcon(this)
+        })
+    })
+</script>
