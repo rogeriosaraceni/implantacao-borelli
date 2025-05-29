@@ -8,7 +8,7 @@
         z-index: 100;
     }
     .wrapper-sticky-tabs .card{
-        background-color: #d0dae4;
+        background-color: #fff;
     }
 
     @media(max-width: 991px){
@@ -52,7 +52,7 @@
     }
 </style>
 
-<section class="wrapper-sticky-tabs">
+<section class="wrapper-sticky-tabs shadow">
     <div class="card">
         <div class="card-body">
             <ul class="d-flex flex-wrap gap-2 nav nav-pills nav-pills-app" id="pills-tab" role="tablist">
@@ -72,6 +72,15 @@
                     <a href="/modulos/projetos/checklist/tabs/geral/" class="nav-link text-nowrap">Geral</a>
                 </li>
             </ul>
+
+            <hr>
+
+            <form>
+                <label class="d-flex flex-wrap align-items-center gap-2">
+                    <span class="text-nowrap">Data Prevista de Inauguração:</span>
+                    <input type="date" name="data_prevista_inauguracao" class="form-control" style="max-width: 260px;">
+                </label>
+            </form>
         </div>
     </div>
 </section>
