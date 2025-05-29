@@ -1,5 +1,6 @@
 
 @import '_variables-colors.css';
+@import '_bootstrap-theme.css';
 @import '_bootstrap-custom.css';
 @import '_main.css';
 @import '_parts.css';

@@ -1,0 +1,90 @@
+:root {
+    /* https://flatuicolors.com/palette/ca */
+    --bs-primary: #0abde3;
+    --bs-primary-rgb: 10, 189, 227;
+
+    --bs-secondary: #95a5a6;
+    --bs-secondary-rgb: 149, 165, 166;
+
+    --bs-success: #1abc9c;
+    --bs-success-rgb: 26, 188, 156;
+
+    --bs-info: #48dbfb;
+    --bs-info-rgb: 72, 219, 251;
+
+    --bs-warning: #feca57;
+    --bs-warning-rgb: 254, 202, 87;
+
+    --bs-danger: #ff6b6b;
+    --bs-danger-rgb: 255, 107, 107;
+
+    --bs-dark: #2c3e50;
+    --bs-dark-rgb: 44, 62, 80;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-primary:hover {
+    border-color: var(--bs-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.85);
+}
+
+.btn-secondary {
+    background-color: var(--bs-secondary);
+    border-color: var(--bs-secondary);
+}
+.btn-secondary:hover {
+    border-color: var(--bs-secondary);
+    background-color: rgba(var(--bs-secondary-rgb), 0.85);
+}
+
+.btn-success {
+    background-color: var(--bs-success);
+    border-color: var(--bs-success);
+}
+.btn-success:hover {
+    border-color: var(--bs-success);
+    background-color: rgba(var(--bs-success-rgb), 0.85);
+}
+
+.btn-info {
+    background-color: var(--bs-info);
+    border-color: var(--bs-info);
+}
+.btn-info:hover {
+    border-color: var(--bs-info);
+    background-color: rgba(var(--bs-info-rgb), 0.85);
+}
+
+.btn-warning {
+    background-color: var(--bs-warning);
+    border-color: var(--bs-warning);
+    color: #000;
+}
+.btn-warning:hover {
+    border-color: var(--bs-warning);
+    background-color: rgba(var(--bs-warning-rgb), 0.85);
+}
+
+.btn-danger {
+    background-color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+.btn-danger:hover {
+    border-color: var(--bs-danger);
+    background-color: rgba(var(--bs-danger-rgb), 0.85);
+}
+
+.btn-dark {
+    background-color: var(--bs-dark);
+    border-color: var(--bs-dark);
+}
+.btn-dark:hover {
+    border-color: var(--bs-dark);
+    background-color: rgba(var(--bs-dark-rgb), 0.85);
+}
+
+
+
