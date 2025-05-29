@@ -20,6 +20,28 @@ app variables
     --app-control-select-border-radius: 0.95rem;
     --app-active: var(--color-app-green-400);
     --app-active-border: var(--color-app-green-400);
+
+    /* https://flatuicolors.com/palette/ca */
+    --bs-primary:        #0abde3;
+    --bs-primary-rgb:    10, 189, 227;
+
+    --bs-secondary:      #95a5a6;
+    --bs-secondary-rgb:  149, 165, 166;
+
+    --bs-success:        #1abc9c;
+    --bs-success-rgb:    26, 188, 156;
+
+    --bs-info:           #48dbfb;
+    --bs-info-rgb:       72, 219, 251;
+
+    --bs-warning:        #feca57;
+    --bs-warning-rgb:    254, 202, 87;
+
+    --bs-danger:         #ff6b6b;
+    --bs-danger-rgb:     255, 107, 107;
+
+    --bs-dark:           #2c3e50;
+    --bs-dark-rgb:       44, 62, 80;
 }
 
 /* --------------------------------------------------------------------
