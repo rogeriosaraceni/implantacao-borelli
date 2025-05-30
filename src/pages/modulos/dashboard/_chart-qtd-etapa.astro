@@ -10,7 +10,7 @@
 	const dataQtdProjetos = [
         {
             "categoria": "Obra",
-            "quantidade": 150
+            "quantidade": 150,
         },
         {
             "categoria": "Cotação",
@@ -25,7 +25,7 @@
 		return a.quantidade < b.quantidade ? 1 : (a.quantidade === b.quantidade ? 0 : -1 );
 	});
 	
-	am4core.ready(function() {
+    am4core.ready(function() {
         am4core.useTheme(am4themes_animated);
 
         const chart = am4core.create("chartdiv-qtd-etapa", am4charts.XYChart);
@@ -66,18 +66,24 @@
 
         series.columns.template.column.cornerRadiusTopLeft = 10;
         series.columns.template.column.cornerRadiusTopRight = 10;
-        series.columns.template.column.fillOpacity = 0.8;
+        series.columns.template.column.fillOpacity = 1;
 
-        const bullet = series.bullets.push(new am4charts.LabelBullet())
-        bullet.interactionsEnabled = false
+        const bullet = series.bullets.push(new am4charts.LabelBullet());
+        bullet.interactionsEnabled = false;
         bullet.dy = -5;
         bullet.fontSize = 11;
         bullet.label.text = '{valueY}';
         bullet.label.fill = am4core.color('#000');
 
-        // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
-        series.columns.template.adapter.add("fill", function(fill, target){
-            return chart.colors.getIndex(target.dataItem.index);
+        const colors = [
+            am4core.color("#34493a"),
+            am4core.color("#64715c"),
+            am4core.color("#9e9f87") 
+        ];
+
+        // Assign colors based on index
+        series.columns.template.adapter.add("fill", function(fill, target) {
+            return colors[target.dataItem.index];
         });
     });
 </script>
