@@ -10,8 +10,18 @@ import ChartPercentualProntasTodo from './_chart-percentual-prontas-todo.astro';
 import ChartPercentualProntasDiaAtrasadas from './_chart-percentual-prontas-dia-atrasadas.astro';
 ---
 
+<style is:inline>
+    .title-chart{
+        text-align: center;
+    }
+</style>
+
 <Layout>
     <Header />
+
+    <script is:inline src="/assets/vendor/amcharts4/core.js"></script>
+    <script is:inline src="/assets/vendor/amcharts4/charts.js"></script>
+    <script is:inline src="/assets/vendor/amcharts4/animated.js"></script>
 
     <main data-el="main-app" class="main-app">
         <section class="container-fluid">
@@ -34,11 +44,27 @@ import ChartPercentualProntasDiaAtrasadas from './_chart-percentual-prontas-dia-
         <section class="container-fluid">
             <ContentSelecao />
 
-            <ChartQtdProjetos />
-            <ChartQtdEtapa />
-            <ChartAtividadesAtrasadasLoja />
-            <ChartPercentualProntasTodo />
-            <ChartPercentualProntasDiaAtrasadas />
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <ChartQtdProjetos />
+                </div>
+                
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <ChartQtdEtapa />
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <ChartAtividadesAtrasadasLoja />
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <ChartPercentualProntasTodo />
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4">
+                    <ChartPercentualProntasDiaAtrasadas />
+                </div>
+            </div>
         </section>
     </main>
 </Layout>

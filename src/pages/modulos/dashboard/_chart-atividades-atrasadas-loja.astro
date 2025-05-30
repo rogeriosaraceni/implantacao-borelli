@@ -2,10 +2,69 @@
     <div class="card-body">
         <h5 class="title-chart">Atividades Atrasadas/Loja</h5>
 
-        <div class="box-chart" id=""></div>
+        <div class="w-100" id="chartdiv-atividades-atrasadas-loja" style="height: 380px;"></div>
     </div>
 </div>
 
 <script is:inline>
+    am4core.ready(function () {
+        am4core.useTheme(am4themes_animated);
 
+        const chart = am4core.create("chartdiv-atividades-atrasadas-loja", am4charts.PieChart);
+        
+        if (chart.logo) {
+            chart.logo.disabled = true
+        }
+        chart.maskBullets = false;
+        chart.padding(0, 0, 0, 0);
+        
+        chart.data = [
+            {
+                category: "Atrasada",
+                value: 20,
+                //color: "#EBC523"
+            },
+            {
+                category: "Loja",
+                value: 80,
+                //color: "#FC7C05"
+            }
+        ];
+
+        // Add and configure Series
+        const pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "value";
+        pieSeries.dataFields.category = "category";
+
+        pieSeries.slices.template.stroke = am4core.color("#fff");
+        pieSeries.slices.template.strokeWidth = 1;
+        pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.slices.template.propertyFields.fill = "color";
+        pieSeries.slices.template.propertyFields.stroke = "color";
+        pieSeries.slices.template.tooltipText = "[#fff font-size: 14px]{category}: [#fff font-size: 16px]{value}%"
+
+        pieSeries.labels.template.fontSize = 14;
+        //pieSeries.labels.template.text = "{category}: {value.percent.formatNumber('#.as')}%";
+
+        // This creates initial animation
+        pieSeries.hiddenState.properties.opacity = 1;
+        pieSeries.hiddenState.properties.endAngle = -90;
+        pieSeries.hiddenState.properties.startAngle = -90;
+
+        chart.legend = new am4charts.Legend();
+        chart.legend.position = "bottom";
+        chart.legend.align = "center";
+        chart.legend.fontSize = 11;
+        chart.legend.valueLabels.template.align = "left";
+        chart.legend.valueLabels.template.textAlign = "left";
+        chart.legend.itemContainers.template.paddingTop = 2;
+        chart.legend.itemContainers.template.paddingBottom = 2;
+        //arredonda valores
+        chart.legend.valueLabels.template.text = "{value.formatNumber('#.as')}%";
+
+        // tamanho da legenda
+        const markerTemplate = chart.legend.markers.template;
+        markerTemplate.width = 16;
+        markerTemplate.height = 16;
+    });
 </script>
